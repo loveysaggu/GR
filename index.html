@@ -10,7 +10,8 @@
 
         if (token) {
             token = token.replace(/^\/+|\/+$/g, '');
-            window.location.replace("https://eximtag.in/" + token + "/");
+            // Send to eximtag.in root with token query parameter to avoid 404s
+            window.location.replace("https://eximtag.in/?rqr_token=" + encodeURIComponent(token));
         } else {
             window.location.replace("https://eximtag.in/");
         }
